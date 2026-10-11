@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ui/ux 프로그래밍 3주차</title>
+  <title>ui/ux 프로그래밍 5주차</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Paytone+One&display=swap" rel="stylesheet">
@@ -66,11 +66,13 @@
     </section>
     <section id="subscribe" class="subscribe-card">
       <h2>성장소식받기</h2>
-      <form>
+      <form id="subscribe-form">
         <label for="email">이메일</label>
         <input type="email" id="email" name="email">
-        <button type="submit">성장 소식 신청하기</button>
+        <button id="subscribeButton" type="submit">성장 소식 신청하기</button>
       </form>
+
+      <p id="subscribeMessage" aria-live="polite">이메일을 입력한 뒤 신청해주세요.</p>
     </section>
   </main>
 
@@ -80,7 +82,7 @@
   </footer>
 
 
-
+<script src="script.js"></script>
 </body>
 
 </html>

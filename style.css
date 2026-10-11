@@ -46,6 +46,9 @@ nav a {padding: 8px 0;}
 form { flex-direction: column; align-items: stretch;}
 input,button {width: 100%;}
 button {min-height: 48px;}
+#subscribeMessage{margin-top: 16px; color: #152e98;}
+#subscribeMessage.is-success {color: #245c3a;background-color: #e7f7ed;padding: 12px;border-radius: 10px;font-weight: 700;}
+#subscribeButton:disabled {color: #ffffff; background-color: #a8a8b2; cursor: not-allowed;}
 
 
 }
