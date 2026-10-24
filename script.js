@@ -251,3 +251,95 @@ restartButton.addEventListener("click", () => {
 
     showStep(0);
 });
+
+/* 중간고사 추가 기능 : 내 코드 접근성 점검 */
+
+const a11yOpen = document.querySelector("#a11y-open");
+const a11yCheck = document.querySelector("#a11y-check");
+const a11yTarget = document.querySelector("#a11y-target");
+const a11yItems = document.querySelectorAll(".a11y-item");
+const a11yError = document.querySelector("#a11y-error");
+const a11yResult = document.querySelector("#a11y-result");
+const a11yScore = document.querySelector("#a11y-score");
+const a11yClose = document.querySelector("#a11y-close");
+const a11yReset = document.querySelector("#a11y-reset");
+const a11ySubmit = document.querySelector("#a11y-submit");
+const a11yNew = document.querySelector("#a11y-new");
+
+function resetA11y() {
+    a11yItems.forEach((item) => {
+        item.checked = false;
+        document.querySelector("#" + item.dataset.tip).hidden = true;
+    });
+
+
+    a11yError.textContent = "";
+    a11yScore.textContent = "";
+    a11yResult.classList.remove("is-success", "is-partial");
+    a11yResult.hidden = true;
+}
+
+
+
+a11yOpen.addEventListener("click", () => {
+    a11yTarget.textContent = "\"" + formData.title + "\" 과제의 코드를 점검합니다.";
+    a11yCheck.hidden = false;
+    a11yCheck.scrollIntoView({ behavior: "smooth" });
+    a11yItems[0].focus();
+});
+
+// 결과 보기 : 체크한 개수 세고 체크 안 한 항목은 해결방법을 보여준다.
+a11ySubmit.addEventListener("click", () => {
+    let count = 0;
+
+    a11yItems.forEach((item) => {
+        const tip = document.querySelector("#" + item.dataset.tip);
+        if (item.checked) {
+            count += 1;
+            tip.hidden = true;
+        } else {
+            tip.hidden = false;
+        }
+    });
+    if (count === 0) {
+        a11yError.textContent = "확인한 항목에 하나 이상 체크해 주세요.";
+        a11yResult.hidden = true;
+        a11yItems[0].focus();
+        return;
+    }
+
+    a11yError.textContent = "";
+    a11yResult.hidden = false;
+
+    if (count === a11yItems.length) {
+        a11yScore.textContent = count + " / " + a11yItems.length + " 축하드립니다! 접근성 기본 점검이 통과되었습니다!^__^";
+        a11yResult.classList.add("is-success");
+        a11yResult.classList.remove("is-partial");
+    } else {
+        a11yScore.textContent = count + " / " + a11yItems.length + " 통과되었습니다. 아래 내용을 확인하고 수정해 주세요.";
+        a11yResult.classList.add("is-partial");
+        a11yResult.classList.remove("is-success");
+    }
+});
+
+a11yReset.addEventListener("click", () => {
+    resetA11y();
+    a11yItems[0].focus();
+});
+
+// 닫기는 체크한 값은 그대로 두고 영역만 숨긴다.
+a11yClose.addEventListener("click", () => {
+    a11yCheck.hidden = true;
+    a11yOpen.focus();
+});
+
+restartButton.addEventListener("click", () => {
+    resetA11y();
+    a11yCheck.hidden = true;
+});
+
+a11yNew.addEventListener("click", () => {
+    restartButton.click();
+    trainingFlow.scrollIntoView({ behavior: "smooth" });
+    titleInput.focus();
+});

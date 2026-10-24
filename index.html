@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ui/ux 프로그래밍 7주차</title>
+  <title>ui/ux 프로그래밍 중간고사 - 퍼블리싱 성장서비스</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Paytone+One&display=swap" rel="stylesheet">
@@ -203,8 +203,49 @@
       <section class="step complete-step" data-step="4" hidden>
         <h3>연습 설정이 완료되었습니다.</h3>
         <p>선택한 내용을 확인하였습니다. 필요하면 다시 설정할 수 있습니다.</p>
-        <button id="restart-button" type="button">다시 설정하기</button>
+        <!-- 완료 후에 접근성 점검으로 이어지도록 버튼을 추가한다. -->
+        <p>연습한 코드가 있다면 웹 접근성 기본 항목을 점검해 보세요.</p>
+        <div class="step-actions">
+          <button id="restart-button" type="button">다시 설정하기</button>
+          <button id="a11y-open" type="button">접근성 점검하기</button>
+        </div>
       </section>
+    </section>
+
+    <!-- 중간고사 추가 기능 : 내 코드 접근성 점검 -->
+    <section id="a11y-check" class="a11y-check" aria-labelledby="a11y-title" hidden>
+      <h2 id="a11y-title">내 코드 접근성 점검</h2>
+      <p id="a11y-target" class="a11y-target"></p>
+      <p>연습한 코드에서 지킨 항목에 체크한 뒤 "점검 결과 보기"를 눌러 주세요.</p>
+
+
+      <fieldset class="a11y-list">
+        <legend>점검 항목</legend>
+        <label><input type="checkbox" class="a11y-item" data-tip="tip-label">입력 필드마다 &lt;label&gt;이 올바르게 연결되어 있나요?</label>
+        <label><input type="checkbox" class="a11y-item" data-tip="tip-alt">의미 있는 이미지에 내용을 설명하는 alt 값이 있나요?</label>
+        <label><input type="checkbox" class="a11y-item" data-tip="tip-heading">제목 태그(h1~h6)를 단계 순서대로 사용했나요?</label>
+        <label><input type="checkbox" class="a11y-item" data-tip="tip-button">버튼마다 기능을 알 수 있는 텍스트가 있나요?</label>
+      </fieldset>
+
+      <p id="a11y-error" class="error-message" aria-live="polite"></p>
+
+      <!-- 체크하지 않은 항목의 해결 방법만 보여 준다. -->
+      <div id="a11y-result" class="a11y-result" aria-live="polite" hidden>
+        <p id="a11y-score" class="a11y-score"></p>
+        <ul class="a11y-tips">
+          <li id="tip-label" hidden>label의 for와 input의 id를 동일하게 맞춰주세요.</li>
+          <li id="tip-alt" hidden>img 태그에 alt="이미지 설명"을 추가해주세요.</li>
+          <li id="tip-heading" hidden>제목 태그는 단계를 건너뛰지 말고 h1 → h2 → h3 순서로 사용해주세요.</li>
+          <li id="tip-button" hidden>"클릭" 대신 "신청하기"처럼 버튼의 기능을 알 수 있게 적어주세요.</li>
+        </ul>
+      </div>
+
+      <div class="a11y-actions">
+        <button id="a11y-close" type="button">점검 닫기</button>
+        <button id="a11y-reset" type="button">다시 점검하기</button>
+        <button id="a11y-submit" type="button">점검 결과 보기</button>
+      </div>
+      <button id="a11y-new" class="a11y-new" type="button">새 연습 설정하기</button>
     </section>
   
     <section id="subscribe" class="subscribe-card">

@@ -1,91 +1,131 @@
-body{font-family: "Noto Sans", sans-serif;color: #1f2a3d;font-size: 18px;line-height: 1.6;margin: 0;background-color: #f3f6fa;}
+body{font-family: "Noto Sans", sans-serif;color: #2a3448;font-size: 18px;line-height: 1.6;margin: 0;background-color: #fafcff;}
 header, main, footer{max-width: 1100px; margin:  0 auto; padding:0 25px ;/* 좁은 화면에서도 화면에 맞춰 */width: 100%;}
-
 header{padding-top: 40px ; padding-bottom: 35px ;}
 section{margin-top: 56px;}
 footer{padding: 32px 0;}
-
 img{display: block;width: 100%;height: auto;max-width: 700px; border-radius: 15px;margin: 20px auto;}
 nav{display: flex;gap: 25px;margin-top: 25px;flex-wrap: wrap;}
 form{display: flex;align-items: center;gap:12px}
-input{flex: 1;min-width: 0;font-size: 16px;padding: 12px 18px; border: 1px solid #cfd8e3;border-radius: 10px;}
+input{flex: 1;min-width: 0;font-size: 16px;padding: 12px 18px; border: 1px solid #dbe3ee;border-radius: 10px;}
 input, button{font: inherit}
 
 .features-list{list-style-type: none;padding-left: 0;margin: 0;display:  grid;/* 들어갈 수 있는 만큼 열을 만들고, 각 카드는 최소 260px부터 남은 공간까지 사용. */grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));gap: 24px; /* 카드가 좁게 눌리지 않고 다음줄로 이동 */ }
-.feature-card{min-width: 0;margin-bottom: 0; padding: 20px 24px;margin-bottom: 6px;border-radius: 12px; background: #e9eff7;border: 1px solid #d3dceb;}
-nav a{color: #2d4a78; font-weight: 700;text-decoration: none;}
+.feature-card{min-width: 0;margin-bottom: 0; padding: 20px 24px;margin-bottom: 6px;border-radius: 8px; background: #f2f6fc;border: 1px solid #e4eaf3;}
+nav a{color: #3a5f9e; font-weight: 700;text-decoration: none;}
 h1{font-size: 48px;font-weight: 800;line-height: 1.2;}
 h2{font-size: 32px;font-weight: 800;line-height: 1.3;color:#002967;}
 h3{font-size: 22px;font-weight: 700;line-height: 1.4;}
-p{color: #3a4a63;line-height: 1.7;}
+p{color: #4d5b72;line-height: 1.7;}
 *, *::before, *::after{box-sizing: border-box;}
-.subscribe-card{border-radius: 12px;padding: 24px;margin-top: 30px;  background: #e9eff7; border: 1px solid #d3dceb;}
-button{padding: 12px 18px;border-radius: 10px;color: #fff;background: #15458d;border: 0;cursor: pointer;  transition: background-color 0.2s, transform 0.2s ease;}
-button:hover{background: #001a45;}
-button:focus, input:focus{outline: 3px solid #6b8fc7; outline-offset: 3px;}
+.subscribe-card{border-radius: 8px;padding: 24px;margin-top: 30px;  background: #f2f6fc; border: 1px solid #e4eaf3;}
+button{padding: 12px 18px;border-radius: 10px;color: #fff;background: #2a5bb0;border: 0;cursor: pointer;  transition: background-color 0.2s, transform 0.2s ease;}
+button:hover{background: #002967;}
+button:focus, input:focus{outline: 3px solid #8aa9dc; outline-offset: 3px;}
 button:active{transform: translateY(1px);}
+/* 이전, 돌아가기 같은 보조 버튼은 연한 색 버튼으로 구분한다 */
+#option-prev, #summary-prev, #recording-cancel, #restart-button{color: #002967;background: #e4eaf3;}
+#option-prev:hover, #summary-prev:hover, #recording-cancel:hover, #restart-button:hover{color: #002967;background: #cbd7ea;}
+/* 다음 단계로 가는 버튼은 글자를 굵게 해서 강조한다 */
+#title-next, #option-next, #finish-button, #recording-confirm{font-weight: 700;}
 
-#subscribeMessage{margin-top: 16px;color: #5b6b82;}
+#subscribeMessage{margin-top: 16px;color: #6b788d;}
 #subscribeMessage.is-success{color: #002967;background: #ffffff;padding: 12px;border-radius: 10px;font-weight: 700;}
-#subscribeMessage:disabled{color:#fff;background-color: #b8c4d6;cursor: not-allowed;}
+#subscribeMessage:disabled{color:#fff;background-color: #c9d3e2;cursor: not-allowed;}
+#startButton:disabled{color: #fafcff;background-color: #c9d3e2;cursor: not-allowed;}
 
 .event-grid{ display: grid;grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:24px;}
-.event-card{min-width: 0;padding: 24px; border: 1px solid #d3dceb;border-radius: 12px;background-color: #ffffff;}
+.event-card{min-width: 0;padding: 24px; border: 1px solid #e4eaf3;border-radius: 8px;background-color: #ffffff;}
 .event-card label:not(.agree-row){display: block;margin-bottom: 8px;font-weight: 700;}
 .event-row{display: flex;align-items: flex-start;gap: 8px;}
+.agree-row{display: flex;align-items: flex-start;gap: 8px;margin-bottom: 12px;cursor: pointer;}
+.agree-row input{flex: 0 0 auto;width: auto;padding: 0;margin-top: 6px;accent-color: #002967;}
 
-.agree-row input{flex: 0 0 auto;margin-top: 6px;}
 
-#startButton:disabled{color: #f3f6fa;background-color: #b8c4d6;cursor: not-allowed;}
+body.dark{color: #c3c8e6;background-color: #232635;}
+body.dark p, body.dark nav a{color: #a6accd;}
+body.dark h2{color: #82aaff;}
+body.dark .feature-card, body.dark .event-card, body.dark .subscribe-card{background-color: #292d3e;border-color: #3a3f58;}
 
-body.dark{color: #e6ecf5;background-color: #0e1726;}
-body.dark p, body.dark nav a{color: #b9c7dc;}
-body.dark h2{color: #9db8e8;}
-
-body.dark .feature-card, body.dark .event-card, body.dark .subscribe-card{background-color: #182640;border-color: #dddddd;}
-
-#agreeMessage{ padding: 12px;border-radius: 12px;background-color: #e9eff7;}
+#agreeMessage{ padding: 12px;border-radius: 8px;background-color: #f2f6fc;}
 #agreeMessage.is-ready{color:#002967;border-color: #002967;font-weight: 700;}
-body.dark #agreeMessage{background-color: #1f2f4d;}
-body.dark #agreeMessage.is-ready{color: #9db8e8;border-color: #9db8e8;}
+body.dark #agreeMessage{background-color: #32374d;}
+body.dark #agreeMessage.is-ready{color: #82aaff;border-color: #82aaff;}
 
 .tabs{ display: flex;flex-wrap: wrap;gap: 8px;margin-bottom: 12px;}
-.tab{color: #4b5d78;background-color: #fff;border: 1px solid #d3dceb;}
-.tab:hover{ color: #002967;background-color: #e3ecf8;}
+.tab{color: #5c6c85;background-color: #fff;border: 1px solid #e4eaf3;}
+.tab:hover{ color: #002967;background-color: #dbe7f8;}
 
 .tab.is-active{color: #002967;background-color: #fff;border-color: #002967;border-bottom: 4px solid currentColor;font-weight: 700;}
 
-.panel{padding: 24px;border: 1px solid #d3dceb;border-radius: 12px; background-color: #f5f8fc;}
+.panel{padding: 24px;border: 1px solid #e4eaf3;border-radius: 8px; background-color: #ffffff;}
 .panel[hidden]{display: none;}
 
-body.dark .tab{color: #c9d5e6;background-color: #1f2f4d;border-color: #dddddd;}
-body.dark .tab.is-active{color: #9db8e8;border-color: #9db8e8;}
-body.dark .panel{background-color: #1f2f4d;border-color: #dddddd;}
+body.dark .tab{color: #c3c8e6;background-color: #32374d;border-color: #3a3f58;}
+body.dark .tab.is-active{color: #82aaff;border-color: #82aaff;}
+body.dark .panel{background-color: #32374d;border-color: #3a3f58;}
 
-#recording-dialog{width: min(520px, calc(100% - 32px));max-width: none;padding: 24px;border: 1px solid #d3dceb;border-radius: 12px;background: #fff;color: #1f2a3d;}
+#recording-dialog{width: min(520px, calc(100% - 32px));max-width: none;padding: 24px;border: 1px solid #e4eaf3;border-radius: 8px;background: #fff;color: #2a3448;}
 #recording-dialog::backdrop{background: rgba(0, 20, 52, 0.55);}
 #recording-dialog .dialog-actions{display: flex;gap: 12px; justify-content: flex-end; margin-top: 20px;}
 #recording-dialog  button{min-height: 44px;}
-body.dark #recording-dialog{background: #182640;color: #e6ecf5;border-color: #dddddd;}
+body.dark #recording-dialog{background: #292d3e;color: #c3c8e6;border-color: #3a3f58;}
 
-.training-flow{padding: 24px;border: 1px solid #d3dceb;border-radius: 24px;background-color: #fff;}
+.training-flow{padding: 24px;border: 1px solid #e4eaf3;border-radius: 8px;background-color: #fff;}
 .training-flow[hidden], .training-flow .step[hidden], .training-flow fieldset[hidden] {display: none;}
 .training-flow .progress{display: flex; flex-wrap: wrap;gap: 12px;}
 .training-flow .progress__item.is-active{ color: #002967;font-weight: 800;}
-
 .training-flow .error-message{min-height: 24px; color: #b42318;font-weight: 700;}
+.training-flow #presentation-title{display: block;width: 100%;max-width: 560px;margin: 8px 0 4px;}
 .training-flow #presentation-title.has-error{border-color: #b42318;}
-/* 연습 시간 슬라이더: 일반 input의 여백·테두리를 빼고, 길이를 줄여 3칸 이동을 쉽게 */
 .training-flow #duration-range {display: block;width: 100%;max-width: 360px;height: 32px;padding: 0;border: 0;margin: 8px 0;accent-color: #002967;cursor: pointer;}
 .training-flow #duration-value {display: inline-block;margin-bottom: 8px;font-weight: 700;}
 .training-flow input[type="checkbox"], .training-flow input[type="radio"] {flex: 0 0 auto;width: auto;accent-color: #002967;}
-
-.training-flow .summary-list > div {display: flex;justify-content: space-between;gap: 16px;padding: 12px 0;border-bottom: 1px solid #d3dceb;}
+.training-flow .summary-list > div {display: flex;justify-content: space-between;gap: 16px;padding: 12px 0;border-bottom: 1px solid #e4eaf3;}
 .training-flow .step-actions{display: flex;gap: 12px;margin-top: 20px;}
 
-body.dark .training-flow{background-color: #182640; border-color: #dddddd;}
-body.dark .training-flow .summary-list > div{border-bottom-color: #dddddd;}
-body.dark .training-flow .progress__item.is-active{color: #9db8e8;}
+body.dark .training-flow{background-color: #292d3e; border-color: #3a3f58;}
+body.dark .training-flow .summary-list > div{border-bottom-color: #3a3f58;}
+body.dark .training-flow .progress__item.is-active{color: #82aaff;}
+
+/* 접근성 점검 */
+.a11y-check{padding: 24px;border: 1px solid #e4eaf3;border-radius: 8px;background-color: #fff;}
+.a11y-check[hidden], .a11y-result[hidden], .a11y-tips li[hidden]{display: none;}
+.a11y-target{font-weight: 700;color: #002967;}
+.a11y-list{display: flex;flex-direction: column;gap: 10px;margin: 0;padding: 16px;border: 1px solid #e4eaf3;border-radius: 8px;}
+.a11y-list legend{padding: 0 6px;font-weight: 700;}
+.a11y-list label{display: flex;align-items: flex-start;gap: 8px;cursor: pointer;}
+.a11y-list input[type="checkbox"]{flex: 0 0 auto;width: auto;margin-top: 6px;accent-color: #002967;}
+.a11y-check .error-message{min-height: 24px;color: #b42318;font-weight: 700;}
+.a11y-result{padding: 16px;border-radius: 8px;background-color: #f8fafd;}
+.a11y-result.is-success{background-color: #e9f7ee;}
+.a11y-result.is-partial{background-color: #f8fafd;}
+.a11y-score{margin: 0;font-weight: 800;color: #002967;}
+.a11y-result.is-success .a11y-score{color: #004f14;}
+.a11y-tips{margin: 8px 0 0;padding-left: 20px;}
+.a11y-actions{display: flex;flex-wrap: wrap;gap: 12px;margin-top: 20px;}
+.a11y-new{margin-top: 12px;color: #002967;background-color: #e4eaf3;}
+.a11y-new:hover{color: #002967;background-color: #cbd7ea;}
+section.step.complete-step h3 {color: #248a3d;text-decoration-line: underline;}
+.step-actions #a11y-open, #a11y-submit{background: #137f8d;}
+.step-actions #a11y-open:hover, #a11y-submit:hover{background: #0e6470;}
+#a11y-reset{color: #0f6b78;background: #e3f5f8;}
+#a11y-reset:hover{color: #fff;background: #137f8d;}
+#a11y-close{color: #5c6c85;background: #eef2f7;}
+#a11y-close:hover{color: #002967;background: #dbe7f8;}
+
+body.dark .a11y-check{background-color: #292d3e;border-color: #3a3f58;}
+body.dark .a11y-list{border-color: #3a3f58;}
+body.dark .a11y-target, body.dark .a11y-score{color: #82aaff;}
+body.dark .a11y-result, body.dark .a11y-result.is-partial{background-color: #32374d;}
+body.dark .a11y-result.is-success{background-color: #22352a;}
+body.dark .a11y-result.is-success .a11y-score{color: #7ee2a8;}
+body.dark .a11y-new{color: #c3c8e6;background-color: #32374d;}
+body.dark #a11y-reset{color: #5fd0de;background: #1f3a40;}
+body.dark #a11y-close{color: #c3c8e6;background: #32374d;}
+body.dark section.step.complete-step h3{color: #30d158;}
+body.dark #option-prev, body.dark #summary-prev, body.dark #recording-cancel, body.dark #restart-button{color: #c3c8e6;background: #32374d;}
+body.dark #option-prev:hover, body.dark #summary-prev:hover, body.dark #recording-cancel:hover, body.dark #restart-button:hover{background: #3a3f58;}
+body.dark input{color: #c3c8e6;background-color: #1b1e2b;border-color: #3a3f58;}
 
 
 /* 웹페이지가 표시되는  가로폭이 768px 이하일 때만 적용 */
@@ -112,5 +152,12 @@ button {min-height: 48px;}
 .training-flow .step-actions {flex-direction: column-reverse;}
 .training-flow .step-actions button {width: 100%;}
 .training-flow input[type="checkbox"], .training-flow input[type="radio"] {width: auto;}
+
+/* 접근성 점검 모바일*/
+.a11y-check {padding: 20px;}
+.a11y-actions {flex-direction: column-reverse;}
+.a11y-actions button, .a11y-new {width: 100%;}
+.a11y-list input[type="checkbox"] {width: auto;}
+input#presentation-title { margin-top: 10px;}
 
 }
