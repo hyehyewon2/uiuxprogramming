@@ -1,6 +1,5 @@
-body{font-family: "Noto Sans", sans-serif;color: #333;font-size: 18px;line-height: 1.6;margin: 0;background-color: aliceblue;}
-header,
-main, footer{max-width: 1100px; margin:  0 auto; padding:0 25px ;/* 좁은 화면에서도 화면에 맞춰 */width: 100%;}
+body{font-family: "Noto Sans", sans-serif;color: #1f2a3d;font-size: 18px;line-height: 1.6;margin: 0;background-color: #f3f6fa;}
+header, main, footer{max-width: 1100px; margin:  0 auto; padding:0 25px ;/* 좁은 화면에서도 화면에 맞춰 */width: 100%;}
 
 header{padding-top: 40px ; padding-bottom: 35px ;}
 section{margin-top: 56px;}
@@ -9,68 +8,84 @@ footer{padding: 32px 0;}
 img{display: block;width: 100%;height: auto;max-width: 700px; border-radius: 15px;margin: 20px auto;}
 nav{display: flex;gap: 25px;margin-top: 25px;flex-wrap: wrap;}
 form{display: flex;align-items: center;gap:12px}
-input{flex: 1;min-width: 0;font-size: 16px;padding: 12px 18px; border: 1px solid #ddd;border-radius: 10px;}
+input{flex: 1;min-width: 0;font-size: 16px;padding: 12px 18px; border: 1px solid #cfd8e3;border-radius: 10px;}
 input, button{font: inherit}
 
-.features-list{list-style-type: none;padding-left: 0;margin: 0;display:  grid;
-  /* 들어갈 수 있는 만큼 열을 만들고,
-     각 카드는 최소 260px부터 남은 공간까지 사용. */grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));gap: 24px; /* 카드가 좁게 눌리지 않고 다음줄로 이동 */ }
-.feature-card{min-width: 0;margin-bottom: 0; padding: 20px 24px;margin-bottom: 6px;border-radius: 12px; background: #b039822b;border: 1px solid rgb(1 9 65);}
-nav a{color: palevioletred; font-weight: 700;text-decoration: none;}
+.features-list{list-style-type: none;padding-left: 0;margin: 0;display:  grid;/* 들어갈 수 있는 만큼 열을 만들고, 각 카드는 최소 260px부터 남은 공간까지 사용. */grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));gap: 24px; /* 카드가 좁게 눌리지 않고 다음줄로 이동 */ }
+.feature-card{min-width: 0;margin-bottom: 0; padding: 20px 24px;margin-bottom: 6px;border-radius: 12px; background: #e9eff7;border: 1px solid #d3dceb;}
+nav a{color: #2d4a78; font-weight: 700;text-decoration: none;}
 h1{font-size: 48px;font-weight: 800;line-height: 1.2;}
-h2{font-size: 32px;font-weight: 800;line-height: 1.3;color:navy;}
+h2{font-size: 32px;font-weight: 800;line-height: 1.3;color:#002967;}
 h3{font-size: 22px;font-weight: 700;line-height: 1.4;}
-p{color: #333;line-height: 1.7;}
-*,
-*::before,
-*::after{box-sizing: border-box;}
-.subscribe-card{border-radius: 12px;padding: 24px;margin-top: 30px;  background: #b039822b; border: 1px solid rgb(1 9 65);}
-button{padding: 12px 18px;border-radius: 10px;color: #fff;background: #667fe7;border: 0;
-    cursor: pointer;  transition: background-color 0.2s, transform 0.2s ease;}
-button:hover{background: #152e98;}
-button:focus,
-input:focus{outline: 3px solid red; outline-offset: 3px;}
+p{color: #3a4a63;line-height: 1.7;}
+*, *::before, *::after{box-sizing: border-box;}
+.subscribe-card{border-radius: 12px;padding: 24px;margin-top: 30px;  background: #e9eff7; border: 1px solid #d3dceb;}
+button{padding: 12px 18px;border-radius: 10px;color: #fff;background: #15458d;border: 0;cursor: pointer;  transition: background-color 0.2s, transform 0.2s ease;}
+button:hover{background: #001a45;}
+button:focus, input:focus{outline: 3px solid #6b8fc7; outline-offset: 3px;}
 button:active{transform: translateY(1px);}
 
-#subscribeMessage{margin-top: 16px;color: #555763;}
-#subscribeMessage.is-success{color: #000080;background: #ebc1c1;padding: 12px;border-radius: 10px;font-weight: 700;}
-#subscribeMessage:disabled{color:#fff;background-color: #eecbcb;cursor: not-allowed;}
+#subscribeMessage{margin-top: 16px;color: #5b6b82;}
+#subscribeMessage.is-success{color: #002967;background: #ffffff;padding: 12px;border-radius: 10px;font-weight: 700;}
+#subscribeMessage:disabled{color:#fff;background-color: #b8c4d6;cursor: not-allowed;}
 
 .event-grid{ display: grid;grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:24px;}
-.event-card{min-width: 0;padding: 24px; border: 1px solid #deddea;border-radius: 12px;background-color: #ffffff;}
+.event-card{min-width: 0;padding: 24px; border: 1px solid #d3dceb;border-radius: 12px;background-color: #ffffff;}
 .event-card label:not(.agree-row){display: block;margin-bottom: 8px;font-weight: 700;}
 .event-row{display: flex;align-items: flex-start;gap: 8px;}
 
 .agree-row input{flex: 0 0 auto;margin-top: 6px;}
 
-#startButton:disabled{color: #eee;background-color: #a8a8be;cursor: not-allowed;}
+#startButton:disabled{color: #f3f6fa;background-color: #b8c4d6;cursor: not-allowed;}
 
-body.dark{color: #ffffff;background-color: #20212a;}
-body.dark p,
-body.dark nav a{color: #d68b8e;}
+body.dark{color: #e6ecf5;background-color: #0e1726;}
+body.dark p, body.dark nav a{color: #b9c7dc;}
+body.dark h2{color: #9db8e8;}
 
-body.dark .feature-card,
-body.dark .event-card,
-body.dark .subscribe-card
-{background-color: #50515f;border-color: #333;}
+body.dark .feature-card, body.dark .event-card, body.dark .subscribe-card{background-color: #182640;border-color: #dddddd;}
 
-#agreeMessage{ padding: 12px;border-radius: 12px;background-color: #d0c9c9;}
-#agreeMessage.is-ready{color:green;border-color: blueviolet;font-weight: 700;}
+#agreeMessage{ padding: 12px;border-radius: 12px;background-color: #e9eff7;}
+#agreeMessage.is-ready{color:#002967;border-color: #002967;font-weight: 700;}
+body.dark #agreeMessage{background-color: #1f2f4d;}
+body.dark #agreeMessage.is-ready{color: #9db8e8;border-color: #9db8e8;}
 
 .tabs{ display: flex;flex-wrap: wrap;gap: 8px;margin-bottom: 12px;}
-.tab{color: burlywood;background-color: #fff;border: 1px solid #deddea;}
-.tab:hover{ color: #fff;background-color: green;}
+.tab{color: #4b5d78;background-color: #fff;border: 1px solid #d3dceb;}
+.tab:hover{ color: #002967;background-color: #e3ecf8;}
 
-.tab.is-active{color: #670003;background-color: #fff;border-color: purple;border-bottom: 4px solid currentColor;font-weight: 700;}
+.tab.is-active{color: #002967;background-color: #fff;border-color: #002967;border-bottom: 4px solid currentColor;font-weight: 700;}
 
-.panel{padding: 24px;border: 1px solid #deddea;border-radius: 12px; background-color: #f4f3ff;}
+.panel{padding: 24px;border: 1px solid #d3dceb;border-radius: 12px; background-color: #f5f8fc;}
 .panel[hidden]{display: none;}
 
-body.dark .tab{color: #d8d8e2;background-color: #2d2e38;border-color: #50515f;}
-body.dark .tab.is-active{color: #b9b5ff;border-color: #b8b5ff;}
-body.dark .panel{background-color: #2d2e38;border-color: #50515f;}
+body.dark .tab{color: #c9d5e6;background-color: #1f2f4d;border-color: #dddddd;}
+body.dark .tab.is-active{color: #9db8e8;border-color: #9db8e8;}
+body.dark .panel{background-color: #1f2f4d;border-color: #dddddd;}
 
+#recording-dialog{width: min(520px, calc(100% - 32px));max-width: none;padding: 24px;border: 1px solid #d3dceb;border-radius: 12px;background: #fff;color: #1f2a3d;}
+#recording-dialog::backdrop{background: rgba(0, 20, 52, 0.55);}
+#recording-dialog .dialog-actions{display: flex;gap: 12px; justify-content: flex-end; margin-top: 20px;}
+#recording-dialog  button{min-height: 44px;}
+body.dark #recording-dialog{background: #182640;color: #e6ecf5;border-color: #dddddd;}
 
+.training-flow{padding: 24px;border: 1px solid #d3dceb;border-radius: 24px;background-color: #fff;}
+.training-flow[hidden], .training-flow .step[hidden], .training-flow fieldset[hidden] {display: none;}
+.training-flow .progress{display: flex; flex-wrap: wrap;gap: 12px;}
+.training-flow .progress__item.is-active{ color: #002967;font-weight: 800;}
+
+.training-flow .error-message{min-height: 24px; color: #b42318;font-weight: 700;}
+.training-flow #presentation-title.has-error{border-color: #b42318;}
+/* 연습 시간 슬라이더: 일반 input의 여백·테두리를 빼고, 길이를 줄여 3칸 이동을 쉽게 */
+.training-flow #duration-range {display: block;width: 100%;max-width: 360px;height: 32px;padding: 0;border: 0;margin: 8px 0;accent-color: #002967;cursor: pointer;}
+.training-flow #duration-value {display: inline-block;margin-bottom: 8px;font-weight: 700;}
+.training-flow input[type="checkbox"], .training-flow input[type="radio"] {flex: 0 0 auto;width: auto;accent-color: #002967;}
+
+.training-flow .summary-list > div {display: flex;justify-content: space-between;gap: 16px;padding: 12px 0;border-bottom: 1px solid #d3dceb;}
+.training-flow .step-actions{display: flex;gap: 12px;margin-top: 20px;}
+
+body.dark .training-flow{background-color: #182640; border-color: #dddddd;}
+body.dark .training-flow .summary-list > div{border-bottom-color: #dddddd;}
+body.dark .training-flow .progress__item.is-active{color: #9db8e8;}
 
 
 /* 웹페이지가 표시되는  가로폭이 768px 이하일 때만 적용 */
@@ -90,5 +105,12 @@ button {min-height: 48px;}
 
 .tabs{flex-direction: column;align-items: stretch;}
 .tab{width: 100%;text-align: left;}
+
+.training-flow {padding: 20px;}
+#recording-dialog .dialog-actions {flex-direction: column-reverse;}
+#recording-dialog .dialog-actions button {width: 100%;}
+.training-flow .step-actions {flex-direction: column-reverse;}
+.training-flow .step-actions button {width: 100%;}
+.training-flow input[type="checkbox"], .training-flow input[type="radio"] {width: auto;}
 
 }

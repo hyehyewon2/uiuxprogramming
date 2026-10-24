@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ui/ux 프로그래밍 6주차</title>
+  <title>ui/ux 프로그래밍 7주차</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Paytone+One&display=swap" rel="stylesheet">
@@ -15,8 +15,8 @@
   <!--
   사용자: 퍼블리싱 실력을 키우고 싶은 초보 퍼블리셔
   목적: 실전 프로젝트 반복 연습으로 퍼블리싱 실력을 키우고 자신감 얻기
-  핵심 행동: 챌린지 신청하기
-  정보 순서: 소개 →  기능 → 방법 → 챌린지 신청
+  핵심 행동: 연습 과제 설정하기
+  정보 순서: 소개 → 기능 → 방법 → 연습 준비 → 과제 설정 → 소식 받기
   -->
   <header>
     <h1>퍼블리싱 성장 서비스</h1>
@@ -25,6 +25,7 @@
       <a href="#about">서비스 소개</a>
       <a href="#features">성장 기능</a>
       <a href="#steps">이용 방법</a>
+      <a href="#event-practice">연습 시작하기</a>
       <a href="#subscribe">성장 소식 받기</a>
     </nav>
   </header>
@@ -37,7 +38,7 @@
       <p>연습이 끝나면 결과물을 확인하고 개선할 부분을 파악할 수 있습니다.</p>
     </section>
     <section id="features">
-      <h2>성장기능</h2>
+      <h2>성장 기능</h2>
 
       <div class="tabs" role="tablist" aria-label="기능 선택">
         <button
@@ -48,7 +49,7 @@
           aria-selected="true"
           aria-controls="feature-practice"
           data-target="feature-practice">
-          단계별 코딩연습
+          단계별 코딩 연습
         </button>
 
         <button
@@ -79,7 +80,7 @@
         class="panel is-active"
         role="tabpanel"
         aria-labelledby="tab-practice">
-        <h3>단계별 코딩연습</h3>
+        <h3>단계별 코딩 연습</h3>
         <p>연습할 퍼블리싱 과제를 선택하고 반복해서 연습합니다.</p>
       </div>
 
@@ -100,18 +101,18 @@
         aria-labelledby="tab-feedback"
         hidden>
         <h3>코드 피드백</h3>
-        <p>작업후 ai가 제공하는 피드백을 통해 개선점을 확인합니다.</p>
+        <p>작업 후 AI가 제공하는 피드백을 통해 개선점을 확인합니다.</p>
       
       </div>
     </section>
 
 
     <section id="steps">
-      <h2>이용방법</h2>
+      <h2>이용 방법</h2>
       <ol>
-        <li>회원가입 후 로그인을 합니다.</li>
-        <li>원하는 프로젝트 주제를 선정하고 필요한 기능을 선택합니다.</li>
-        <li>서비스를 이용하고 결과를 확인합니다.</li>
+        <li>연습 준비 설정에서 닉네임을 입력하고 코드 분석에 동의합니다.</li>
+        <li>연습할 과제 제목, 연습 시간, AI 코드 리뷰 여부를 선택합니다.</li>
+        <li>설정한 내용을 확인하고 연습을 시작한 뒤, 코드 피드백으로 개선점을 확인합니다.</li>
       </ol>
     </section>
 
@@ -137,14 +138,77 @@
             AI 피드백을 위한 코드 분석에 동의합니다
           </label>
             <p id="agreeMessage">동의 후 연습을 시작할 수 있습니다.</p>
-            <button id="startButton" type="button" disabled>연습 시작하기</button>
+
+            <button id="startButton" type="button" disabled>연습 설정 시작하기</button>
         </article>
       </div>
     </section>
 
+    <dialog id="recording-dialog" aria-labelledby="recording-title" aria-describedby="recording-description">
+      <h2 id="recording-title">코드 분석 안내</h2>
+      <p id="recording-description">연습한 코드를 AI 피드백에 활용할 수 있습니다. 지금은 연습 조건만 설정하며 코드 분석은 시작되지 않습니다.</p>
+      <div class="dialog-actions">
+        <button id="recording-cancel" type="button">돌아가기</button>
+        <button id="recording-confirm" type="button">동의하고 설정 시작하기</button>
+      </div>
+    </dialog>
+
+    <section id="training-flow" class="training-flow" hidden>
+      <h2>연습 과제 설정</h2>
+      <p class="progress" aria-label="설정 진행 단계">
+        <span class="progress__item">1 · 정보</span>
+        <span class="progress__item">2 · 조건</span>
+        <span class="progress__item">3 · 확인</span>
+      </p>
+
+      <section class="step" data-step="1" hidden>
+        <h3>과제 정보를 입력해 주세요.</h3>
+        <label for="presentation-title">과제 제목</label>
+        <input id="presentation-title" type="text" placeholder="예: 반응형 랜딩페이지 만들기" aria-describedby="title-error">
+        <p id="title-error" class="error-message" aria-live="polite"></p>
+        <button id="title-next" type="button">연습 조건 선택하기</button>
+      </section>
+
+      <section class="step" data-step="2" hidden>
+        <h3>연습 조건을 선택해 주세요.</h3>
+        <label for="duration-range">연습 시간</label>
+        <input id="duration-range" type="range" min="0" max="2" step="1" value="1">
+        <output id="duration-value" for="duration-range">60분</output>
+        <label><input type="checkbox" id="qna-option">AI 코드 리뷰 포함</label>
+        <fieldset id="qna-options" hidden>
+          <legend>리뷰 항목 수</legend>
+          <label><input type="radio" name="qna-count" value="1">1개</label>
+          <label><input type="radio" name="qna-count" value="2" checked>2개</label>
+          <label><input type="radio" name="qna-count" value="3">3개</label>
+        </fieldset>
+        <div class="step-actions">
+          <button id="option-prev" type="button">이전</button>
+          <button id="option-next" type="button">내용 확인하기</button>
+        </div>
+      </section>
+
+      <section class="step" data-step="3" hidden>
+        <h3>입력한 내용을 확인해 주세요.</h3>
+        <div class="summary-list">
+          <div><span>과제 제목</span><strong id="summary-title"></strong></div>
+          <div><span>연습 시간</span><strong id="summary-duration"></strong></div>
+          <div><span>코드 리뷰</span><strong id="summary-qna"></strong></div>
+        </div>
+        <div class="step-actions">
+          <button id="summary-prev" type="button">수정하기</button>
+          <button id="finish-button" type="button">설정 완료하기</button>
+        </div>
+      </section>
+
+      <section class="step complete-step" data-step="4" hidden>
+        <h3>연습 설정이 완료되었습니다.</h3>
+        <p>선택한 내용을 확인하였습니다. 필요하면 다시 설정할 수 있습니다.</p>
+        <button id="restart-button" type="button">다시 설정하기</button>
+      </section>
+    </section>
   
     <section id="subscribe" class="subscribe-card">
-      <h2>성장소식받기</h2>
+      <h2>성장 소식 받기</h2>
       <form id="subscribe-form">
         <label for="email">이메일</label>  
         <input type="email" id="email" name="email">
