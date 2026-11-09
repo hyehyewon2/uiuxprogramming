@@ -89,14 +89,14 @@ function updateTitleExperience() {
 function validateTitle() {
   const title = titleInput.value.trim();
   if (!title) {
-    titleError.textContent = "발표 제목을 입력해 주세요.";
+    titleError.textContent = "과제 제목을 입력해 주세요.";
     titleInput.setAttribute("aria-invalid", "true");
     updateTitleExperience();
     titleInput.focus();
     return false;
   }
   if (title.length < 2) {
-    titleError.textContent = "발표 제목은 2자 이상 입력해 주세요.";
+    titleError.textContent = "과제 제목은 2자 이상 입력해 주세요.";
     titleInput.setAttribute("aria-invalid", "true");
     updateTitleExperience();
     titleInput.focus();
@@ -119,7 +119,7 @@ function getFormValues() {
 }
 
 function qnaText(plan) {
-  return plan.qna ? `질문 ${plan.qnaCount}개 포함` : "포함 안 함";
+  return plan.qna ? `리뷰 ${plan.qnaCount}개 포함` : "포함 안 함";
 }
 
 function updateSummary() {
